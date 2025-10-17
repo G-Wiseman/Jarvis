@@ -5,7 +5,7 @@ import os
 import re
 import dotenv
 from jarvis_image import jarvis_make_image
-GUILD = discord.Object(id = int(dotenv.get_key(os.path("./.env"), "GUILD_ID")))
+GUILD = discord.Object(id = int(dotenv.get_key(".env", "GUILD_ID")))
 
 # New Discord.py 2.0.0 intents needed for Bot
 intents = discord.Intents.all()
@@ -65,5 +65,5 @@ async def handle_mention(input_mention):
     return user
 
 #Now the bot's event loop should be run! It begins!
-bot.run(dotenv.get_key(os.path("./.env"), "PRIVATE_KEY"))
+bot.run(dotenv.get_key("./.env", "PRIVATE_KEY"))
 
